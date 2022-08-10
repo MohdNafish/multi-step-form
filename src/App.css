@@ -58,23 +58,23 @@
     padding-bottom: 20px;
 }
 
-.form-container .header {
+.header {
     flex: 20%;
     display: grid;
     place-items: center;
 }
 
-.form-container .body {
+.body {
     flex: 60%;
 }
 
-.form-container .footer {
+.footer {
     flex: 20%;
     display: flex;
     justify-content: center;
 }
 
-.form-container .footer button {
+.footer button {
     border-radius: 7px;
     width: 100px;
     height: 40px;
@@ -133,15 +133,6 @@
     font-size: 20px;
 }
 
-input {
-    border: 2px solid rgb(98, 0, 255);
-    border-radius: 5px;
-}
-
-input:focus {
-    border: 3px solid rgb(98, 0, 255);
-}
-
 
 /* ========= New css start here ==========  */
 
@@ -191,4 +182,18 @@ input:focus {
     width: 18px;
     height: 18px;
     margin-right: 10px;
+}
+
+.plan-box {
+    background: #fff;
+    border-radius: 25px;
+}
+
+.plan-header {
+    height: 133px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
 }
