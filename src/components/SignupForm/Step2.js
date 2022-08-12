@@ -16,45 +16,47 @@ const Step2 = () => {
           </Col>
         </Row> */}
         <div>
-          <Form className='form-inner text-white'>
-            <Row>
-              <Col>
-                <div className='plan-box'>
-                  <div className='plan-header' style={{backgroundImage: `url(${plan1})`}}>
+          <Form className='form-inner'>
+            <div className='plan-sec text-center'>
+              <Row>
+                <Col>
+                  <div className='plan-box blue'>
+                    <div className='plan-header text-white' style={{backgroundImage: `url(${plan1})`}}>
 
+                    </div>
+                    <div className='plan-body'>
+                      <h2 className='mb-0'>£7.<span>99</span></h2>
+                      <h6 className='plan-type'>Monthly</h6>
+                      <button className='btn btn1'>Select</button>
+                    </div>
                   </div>
-                  <div className='plan-body'>
-                    <h2 className='mb-0'>£7.<span>99</span></h2>
-                    <h6 className='plan-type'>Monthly</h6>
-                    <button className='btn btn1'>Select</button>
+                </Col>
+                <Col>
+                  <div className='plan-box orange'>
+                    <div className='plan-header text-white' style={{backgroundImage: `url(${plan2})`}}>
+                      <h4 className='mb-0'>Save 20%</h4>
+                    </div>
+                    <div className='plan-body'>
+                      <h2 className='mb-0'>£76.<span>00</span></h2>
+                      <h6 className='plan-type'>Yearly</h6>
+                      <button className='btn btn1'>Select</button>
+                    </div>
                   </div>
-                </div>
-              </Col>
-              <Col>
-                <div className='plan-box'>
-                  <div className='plan-header' style={{backgroundImage: `url(${plan2})`}}>
-                    <h4 className='mb-0'>Save 20%</h4>
+                </Col>     
+                <Col>
+                  <div className='plan-box teal'>
+                    <div className='plan-header text-white' style={{backgroundImage: `url(${plan3})`}}>
+                      <h4 className='mb-0'>Save 10%</h4>
+                    </div>
+                    <div className='plan-body'>
+                      <h2 className='mb-0'>£43.<span>00</span></h2>
+                      <h6 className='plan-type'>6 Month</h6>
+                      <button className='btn btn1'>Select</button>
+                    </div>
                   </div>
-                  <div className='plan-body'>
-                    <h2 className='mb-0'>£76.<span>00</span></h2>
-                    <h6 className='plan-type'>Yearly</h6>
-                    <button className='btn btn1'>Select</button>
-                  </div>
-                </div>
-              </Col>     
-              <Col>
-                <div className='plan-box'>
-                  <div className='plan-header' style={{backgroundImage: `url(${plan3})`}}>
-                    <h4 className='mb-0'>Save 10%</h4>
-                  </div>
-                  <div className='plan-body'>
-                    <h2 className='mb-0'>£43.<span>00</span></h2>
-                    <h6 className='plan-type'>6 Month</h6>
-                    <button className='btn btn1'>Select</button>
-                  </div>
-                </div>
-              </Col>
-            </Row>
+                </Col>
+              </Row>
+            </div>
           </Form>
         </div>
     </>
