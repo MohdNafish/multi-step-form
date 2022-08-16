@@ -2,6 +2,7 @@
     /* text-align: center; */
 }
 
+
 @font-face {
     font-family: 'Montserrat';
     font-weight: 300;
@@ -109,22 +110,19 @@ body {
 }
 
 .footer {
-    flex: 20%;
     display: flex;
     justify-content: center;
 }
 
 .footer button {
-    border-radius: 7px;
     width: 100px;
-    height: 40px;
     background-color: #F96B30;
-    font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 1px;
+    border-radius: 4px;
     cursor: pointer;
     margin: 5px;
+    padding: 7px 0;
 }
 
 
@@ -134,16 +132,12 @@ body {
     height: 10px;
     width: 400px;
     background-color: rgb(110, 110, 110);
-    /* margin-right: 20px; */
 }
 
 .steps {
     display: flex;
     color: #fff;
     text-align: center;
-    /* flex-direction: column; */
-    /* height: 400px; */
-    /* margin-right: 30px; */
 }
 
 .steps div {
@@ -202,7 +196,9 @@ body {
 .form-inner {
     padding: 15px;
 }
-
+.form-group {
+    margin-bottom: 20px;
+}
 .form-control {
     border-radius: 2px !important;
     padding: 0.575rem 0.75rem;
@@ -216,6 +212,8 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-size: 14px;
+    line-height: 19px;
 }
 
 .accept-policy-check input {
@@ -231,10 +229,11 @@ body {
 .plan-box {
     background: #fff;
     border-radius: 25px;
+    padding-bottom: 20px;
 }
 
 .plan-header {
-    height: 112px;
+    height: 90px;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -246,21 +245,108 @@ body {
     font-size: 20px;
 }
 
-button.btn {
+.plan-body .btn {
     border: 2px solid;
+    padding: 6px 15px;
 }
-
-.blue .btn {
-    border-color: #2c82c8;
+.text-blue {
     color: #2c82c8;
 }
-
-.orange .btn {
-    border-color: #f96b30;
+.bg-blue {
+    background-color: #2c82c8 !important;
+}
+.blue .btn {
+    border-color: #2c82c8;
+}
+.blue .btn:hover{
+    background-color: #2c82c8;
+    color: #fff;
+}
+.text-orange {
     color: #f96b30;
 }
-
+.bg-orange {
+    background-color: #f96b30 !important;
+}
+.orange .btn {
+    border-color: #f96b30;
+}
+.orange .btn:hover {
+    background-color: #f96b30;
+    color: #fff;
+}
+.text-teal {
+    color: #068c94;
+}
+.bg-teal {
+    background-color: #068c94 !important;
+}
 .teal .btn {
     border-color: #068c94;
-    color: #068c94;
+}
+.teal .btn:hover {
+    background-color: #068c94;
+    color: #fff;
+}
+.plan-body .plan-type {
+    margin: 10px 0 16px;
+}
+
+.discount-code-card {
+    background-color: #EEEEEE;
+    border-radius: 8px;
+}
+.summary p {
+    display: flex;
+    align-items: baseline;
+}
+.summary p img {
+    margin-right: 8px;
+}
+.payment-detail {
+    border-radius: 0 8px 8px 0;
+}
+.total-pay {
+    border-top: 1px solid #000;
+    font-weight: 500;
+}
+.payment-detail {
+    padding: 10px 12px 12px 30px;
+}
+.payment-detail p {
+    font-size: 14px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.text-sm {
+    font-size: 14px;
+}
+.discount-code-box .btn:hover {
+    border-color: #f96b30;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.next_btn {
+    min-width: 100px;
+    background-color: #F96B30;
+    color: white;
+    border: 0 none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 7px 0;
+}
+.next_btn:hover {
+    background: #f96b30;
+}
+.error {
+    color: #cd0000;
+}
+.btn:focus{
+    box-shadow: none;
+}
+.next_btn:focus, .next_btn:active {
+    background: #f96b30;
 }

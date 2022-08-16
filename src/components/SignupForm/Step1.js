@@ -1,10 +1,43 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React, { useState, useEffect, useCallback } from 'react';
+// import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useFormik, Formik, Field, Form } from 'formik';
+import * as yup from 'yup';
+import {Container, Row, Col, Button} from 'react-bootstrap';
+import { AboutSchema } from '../../validators/Step1_AboutSchema'
 
-const Step1 = () => {
+const Step1 = ({setNextPage}) => {
+
+  // const handleOnSubmit = (values) => {
+    // const fullName = Object.keys(values)
+    //   .map((key) => values[key])
+    //   .join(" ");
+    // alert(`Hello ${fullName}!`);
+
+    // handleNext()
+  // };
+  const max = new Date();
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      dob: max,
+      gender: "",
+      email: "",
+      password: "",
+    },
+    validationSchema: AboutSchema,
+    onSubmit: setNextPage,
+  });
+
+  const setInputValue = useCallback(
+    (key, value) =>
+      formik.setValues({
+        ...formik.values,
+        [key]: value,
+      }),
+    [formik]
+  );
+  
   return (
     <>
         {/* <Row>
@@ -13,64 +46,100 @@ const Step1 = () => {
             <p className='text-white'>Fill all form field to go next step</p>
           </Col>
         </Row> */}
-        <div>
-          <Form className='form-inner text-white'>
-            <Row>
-              <Col>
-                <h4 className='mb-3'>About You</h4>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-                  <Form.Control type="text" placeholder="First Name" />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-                  <Form.Control type="text" placeholder="Last Name" />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-                  <Form.Control type="date" placeholder="Date of Birth" />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Label className='d-block mb-0'>Gender</Form.Label>
+        <div className='form-inner text-white'>
+        <Row>
+          <Col>
+            <h4 className='mb-3'>About You</h4>
+          </Col>
+        </Row>
+        <form onSubmit={formik.handleSubmit}>
+          <Row>
+            <Col md={6}>
+              <div className='form-group'>
+                <input className='form-control'
+                  placeholder="First Name"
+                  value={formik.values.firstName}
+                  onChange={(e) => setInputValue("firstName", e.target.value)}
+                />
+                <small className='error'>{formik.errors.firstName}</small>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className='form-group'>
+                <input className='form-control'
+                  placeholder="Last Name"
+                  value={formik.values.lastName}
+                  onChange={(e) => setInputValue("lastName", e.target.value)}
+                />
+                <small className='error'>{formik.errors.lastName}</small>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className='form-group'>
+                <input className='form-control'
+                  type="date"
+                  placeholder="Date of Birth"
+                  value={formik.values.lastName}
+                  onChange={(e) => setInputValue("Date of Birth", e.target.value)}
+                />
+                <small className='error'>{formik.errors.dob}</small>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className='form-group'>
+                <label>Gender</label><br/>
                 <label>
-                  <Form.Check inline type="radio" aria-label="radio 1" name="gender" className='m-0' /> Male
+                  <input
+                    type="radio"
+                    name="gender"
+                    value={formik.values.gender}
+                    onChange={(e) => setInputValue("gender", e.target.value)}
+                  /> Male
                 </label>
-                <label>
-                  <Form.Check inline type="radio" aria-label="radio 2" name="gender" className='m-0 ml-2' /> Female
+                <label className='mx-4'>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value={formik.values.gender}
+                    onChange={(e) => setInputValue("gender", e.target.value)}
+                  /> Female
                 </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <h4 className='mb-3'>Security</h4>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <Form.Group className="mb-4">
-                  <Form.Control type="text" placeholder="Email" />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group className="mb-4">
-                  <Form.Control type="text" placeholder="Password" />
-                </Form.Group>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <label className='accept-policy-check'>
-                  <input type='checkbox' /> I would like to receive News and promotions from easyGym and easyGroup.
-                </label>
-              </Col>
-            </Row>
-          </Form>
+                <small className='error'>{formik.errors.dob}</small>
+              </div>
+            </Col>
+            <Col md={12}>
+              <h4 className='mb-3'>Security</h4>
+            </Col>
+            <Col md={6}>
+              <div className='form-group'>
+                <input className='form-control'
+                  placeholder="Email"
+                  value={formik.values.email}
+                  onChange={(e) => setInputValue("email", e.target.value)}
+                />
+                <small className='error'>{formik.errors.email}</small>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className='form-group'>
+                <input className='form-control'
+                  placeholder="Password"
+                  value={formik.values.password}
+                  onChange={(e) => setInputValue("password", e.target.value)}
+                />
+                <small className='error'>{formik.errors.password}</small>
+              </div>
+            </Col>
+            <Col md={12}>
+              <label className='accept-policy-check'>
+                <input type='checkbox' /> I would like to receive News and promotions from easyGym and easyGroup.
+              </label>
+            </Col>
+          </Row>
+          <div className='text-center mt-4'>
+            <Button type="submit" className='next_btn' >Next</Button>
+          </div>
+        </form>
         </div>
     </>
   )
