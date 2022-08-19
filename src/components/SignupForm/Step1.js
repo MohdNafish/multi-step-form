@@ -4,6 +4,8 @@ import { useFormik, Formik, Field, Form } from 'formik';
 import * as yup from 'yup';
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import { AboutSchema } from '../../validators/Step1_AboutSchema'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Step1 = ({setNextPage}) => {
 
@@ -38,6 +40,8 @@ const Step1 = ({setNextPage}) => {
     [formik]
   );
   
+  const [startDate, setStartDate] = useState();
+
   return (
     <>
         {/* <Row>
@@ -76,12 +80,13 @@ const Step1 = ({setNextPage}) => {
             </Col>
             <Col md={6}>
               <div className='form-group'>
-                <input className='form-control'
+                {/* <input className='form-control'
                   type="date"
                   placeholder="Date of Birth"
                   value={formik.values.lastName}
                   onChange={(e) => setInputValue("Date of Birth", e.target.value)}
-                />
+                /> */}
+                <DatePicker className='form-control' placeholderText='Date of Birth' value={formik.errors.dob} selected={startDate} onChange={(date:Date) => setStartDate(date)} />
                 <small className='error'>{formik.errors.dob}</small>
               </div>
             </Col>
@@ -92,7 +97,7 @@ const Step1 = ({setNextPage}) => {
                   <input
                     type="radio"
                     name="gender"
-                    value={formik.values.gender}
+                    value="male"
                     onChange={(e) => setInputValue("gender", e.target.value)}
                   /> Male
                 </label>
@@ -100,7 +105,7 @@ const Step1 = ({setNextPage}) => {
                   <input
                     type="radio"
                     name="gender"
-                    value={formik.values.gender}
+                    value="female"
                     onChange={(e) => setInputValue("gender", e.target.value)}
                   /> Female
                 </label>
@@ -137,7 +142,7 @@ const Step1 = ({setNextPage}) => {
             </Col>
           </Row>
           <div className='text-center mt-4'>
-            <Button type="submit" className='next_btn' >Next</Button>
+            <Button type="submit" className='next_btn'>Next</Button>
           </div>
         </form>
         </div>

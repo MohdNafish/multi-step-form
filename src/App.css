@@ -2,7 +2,6 @@
     /* text-align: center; */
 }
 
-
 @font-face {
     font-family: 'Montserrat';
     font-weight: 300;
@@ -196,9 +195,11 @@ body {
 .form-inner {
     padding: 15px;
 }
+
 .form-group {
     margin-bottom: 20px;
 }
+
 .form-control {
     border-radius: 2px !important;
     padding: 0.575rem 0.75rem;
@@ -249,45 +250,58 @@ body {
     border: 2px solid;
     padding: 6px 15px;
 }
+
 .text-blue {
     color: #2c82c8;
 }
+
 .bg-blue {
     background-color: #2c82c8 !important;
 }
+
 .blue .btn {
     border-color: #2c82c8;
 }
-.blue .btn:hover{
+
+.blue .btn:hover {
     background-color: #2c82c8;
     color: #fff;
 }
+
 .text-orange {
     color: #f96b30;
 }
+
 .bg-orange {
     background-color: #f96b30 !important;
 }
+
 .orange .btn {
     border-color: #f96b30;
 }
+
 .orange .btn:hover {
     background-color: #f96b30;
     color: #fff;
 }
+
 .text-teal {
     color: #068c94;
 }
+
 .bg-teal {
     background-color: #068c94 !important;
 }
+
 .teal .btn {
     border-color: #068c94;
 }
+
 .teal .btn:hover {
     background-color: #068c94;
     color: #fff;
 }
+
 .plan-body .plan-type {
     margin: 10px 0 16px;
 }
@@ -296,38 +310,47 @@ body {
     background-color: #EEEEEE;
     border-radius: 8px;
 }
+
 .summary p {
     display: flex;
     align-items: baseline;
 }
+
 .summary p img {
     margin-right: 8px;
 }
-.payment-detail {
-    border-radius: 0 8px 8px 0;
-}
+
 .total-pay {
     border-top: 1px solid #000;
     font-weight: 500;
 }
+
 .payment-detail {
+    border-radius: 0 8px 8px 0;
     padding: 10px 12px 12px 30px;
+    min-width: 180px;
 }
+
 .payment-detail p {
     font-size: 14px;
 }
-.cursor-pointer{
+
+.cursor-pointer {
     cursor: pointer;
 }
+
 .text-sm {
     font-size: 14px;
 }
+
 .discount-code-box .btn:hover {
     border-color: #f96b30;
 }
+
 .form-control:focus {
     box-shadow: none;
 }
+
 .next_btn {
     min-width: 100px;
     background-color: #F96B30;
@@ -338,15 +361,20 @@ body {
     margin: 5px;
     padding: 7px 0;
 }
+
 .next_btn:hover {
     background: #f96b30;
 }
+
 .error {
     color: #cd0000;
 }
-.btn:focus{
+
+.btn:focus {
     box-shadow: none;
 }
-.next_btn:focus, .next_btn:active {
+
+.next_btn:focus,
+.next_btn:active {
     background: #f96b30;
 }

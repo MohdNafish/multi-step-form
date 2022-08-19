@@ -9,12 +9,16 @@ import * as yup from 'yup';
   .string('Enter your Last Name')
   .min(3, "Last Name must be minimum 3 character")
   .required('Last Name is required'),
-  // dob: yup
-  // .string()
-  // .required(),
-  // gender: yup
-  // .string()
-  // .required(),
+
+//   dob: yup
+//   .date()
+//   .required("Required")
+//   .nullable(),
+
+//   gender: yup
+//   .string()
+//   .required(),
+
   email: yup
   .string('Enter your email')
   .email('Please Enter valid email address')
